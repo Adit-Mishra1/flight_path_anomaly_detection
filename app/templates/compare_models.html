@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Model Comparison | Flight Monitor</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<section class="compare-shell">
+    <div class="compare-header">
+        <div>
+            <h1>Live Learning vs Static Models</h1>
+            <p id="compareTimestamp"></p>
+        </div>
+        <a href="{{ url_for('index') }}" class="button-link secondary-link">Back to Simulation</a>
+    </div>
+
+    <div class="gap-grid" id="gapGrid"></div>
+
+    <section class="model-card">
+        <div class="panel-header">
+            <h2>Live Learning Model</h2>
+            <div id="liveSummary" class="summary-badge"></div>
+        </div>
+        <div class="compare-grid">
+            <div id="liveMap" class="compare-map"></div>
+            <canvas id="liveChart" class="compare-chart" height="240"></canvas>
+        </div>
+    </section>
+
+    <section class="model-card">
+        <div class="panel-header">
+            <h2>Static Random Forest Model</h2>
+            <div id="rfSummary" class="summary-badge"></div>
+        </div>
+        <div class="compare-grid">
+            <div id="rfMap" class="compare-map"></div>
+            <canvas id="rfChart" class="compare-chart" height="240"></canvas>
+        </div>
+    </section>
+
+    <section class="model-card">
+        <div class="panel-header">
+            <h2>Static XGBoost Model</h2>
+            <div id="xgbSummary" class="summary-badge"></div>
+        </div>
+        <div id="xgbBackend" class="backend-note"></div>
+        <div class="compare-grid">
+            <div id="xgbMap" class="compare-map"></div>
+            <canvas id="xgbChart" class="compare-chart" height="240"></canvas>
+        </div>
+    </section>
+</section>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="{{ url_for('static', filename='js/compare_models.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+.venv/
+.venv_msys/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.codex
